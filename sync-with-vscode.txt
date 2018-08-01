@@ -1,0 +1,31 @@
+VS Code 与 Github 同步
+
+先申请了Github账号并且创建一个repository
+这里我的账号是netgc，repository名是netgc/k8s-docker-library
+
+打开一个文件夹，作为本地的根目录
+点击VS Code 左侧源代码管理图标，打开终端窗口：
+vi .git/config
+# [core]这部分自动出现
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+        ignorecase = true
+        precomposeunicode = true
+# 添加
+[remote "origin"]
+    url=https://github.com/netgc/k8s-docker-library.git
+    fetch = +refs/heads/*:refs/remotes/origin/*
+保存。
+
+# 继续执行如下命令
+echo "# k8s-docker-library" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/netgc/k8s-docker-library.git
+git push -u origin master
+# 提示输入你的github账号和密码，此时刷新github，可以看到README.md文件已经出现
+# 此时可以正常提交文档到github
