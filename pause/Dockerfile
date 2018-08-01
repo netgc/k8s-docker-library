@@ -1,0 +1,1 @@
+FROM cr.io/google_containers/pause:3.1
