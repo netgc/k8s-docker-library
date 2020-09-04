@@ -20,11 +20,7 @@ vi .git/config
     fetch = +refs/heads/*:refs/remotes/origin/*
 保存。
 
-<<<<<<< HEAD
 ## 或者执行如下命令
-=======
-# 继续执行如下命令
->>>>>>> c778d46e09a854026decca7b2f19e8cb155d3520
 echo "# k8s-docker-library" >> README.md
 git init
 git add README.md
